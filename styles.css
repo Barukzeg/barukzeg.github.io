@@ -1,0 +1,94 @@
+body {
+  font-family: 'Magra', sans-serif;
+  color: #000000;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/***********HEADER***********/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #E3FFF2;
+  z-index: 1000;
+  gap : 20px;
+  height: 5dvh;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+}
+
+header .logo img {
+  height: 50px;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+header nav ul li {
+  display: inline;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #7C9DDD;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/***********FOOTER***********/
+
+footer {
+  background-color: #FFFFFF;
+  text-align: center;
+  width: 100dvw;
+  height: 10dvh;
+  border-width: 1px;
+  border-style: dashed none none;
+  border-color: #000000;
+}
+
+
+/***********MAIN***********/
+
+section {
+  height: 100dvh;
+  width: 100dvw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.presentation {
+  background-color: #E3FFF2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fleche, .counterweight {
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.content-pres {
+  background-color: #A6BAB1;
+  padding: 20px;
+  width: 98dvw;
+  height: 45dvh;
+}
