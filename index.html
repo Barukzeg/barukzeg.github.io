@@ -13,42 +13,129 @@
     <body>
         <header>
             <div class="logo">
-                <img src="./src/logo.png" alt="Logo">
+                <a href="https://github.com/Barukzeg">
+                    <img src="./src/logo-wo-bg.png" alt="Logo">
+                </a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#presentation">Accueil</a></li>
                     <li><a href="#competences">Compétences</a></li>
                     <li><a href="#experiences">Expériences</a></li>
+                    <li><a href="./pages/projets.html">Projets</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section id="presentation" class="presentation">
-                <div class="counterweight"></div>
                 <div class="content-pres">
-                    <h1>Naïl Lamarti</h1>
-                    <p>Etudiant en informatique, passionné par le développement web et mobile.</p>
+                    <div class="text-pres">
+                        <h1>Naïl Lamarti</h1>
+                        <hr>
+                        <p>Âgé de 20 ans, je suis étudiant en informatique à l'IUT Paul Sabatier à Toulouse. Actuellement en troisième année du parcours "réalisation d'applications" de ma formation, j'ai pu mettre à épreuve mes compétences au cours de différents projets et stages, et prouver ma capacité à participer au développement d'applications de différents types. Que ce soit dans le Frontend, le Backend, ou la gestion et direction de projet, je sais mettre à profit mes connaissances pour mener à bien ma tâche.</p>
+                    </div>
+                    <div class="img-pres">
+                        <img src="./src/photo.webp" alt="Naïl Lamarti">
+                    </div>
                 </div>
                 <div class="fleche">
-                    <svg width="54" height="41" viewBox="0 0 54 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 11.92L27.1 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M50.3745 11.92L27.2745 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M13.24 4L27.0478 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
-                        <path d="M40.96 4L27.1522 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
-                    </svg>
+                    <a href="#competences">
+                        <svg width="54" height="41" viewBox="0 0 54 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 11.92L27.1 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M50.3745 11.92L27.2745 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M13.24 4L27.0478 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M40.96 4L27.1522 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    </a>
                 </div>
             </section>
             <section id="competences">
-
+                <!--Zone des compétences (compétences techniques et soft skills)-->
             </section>
             <section id="experiences">
-
+                <!--Zone des éxperiences (stage 2a + stage 3a + mentions projets tutorés avec bouton pour la page projets)-->
             </section>
         </main>
         <footer>
-
+            <!--Liens de contact (LinkedIn, Github, Page contact, ...)-->
         </footer>
+        <script>
+            const header = document.querySelector('header');
+            const presentationSection = document.querySelector('#presentation');
+            const logoImage = document.querySelector('.logo img');
+            const fleche = document.querySelector('.fleche');
+            
+            function checkScroll() {
+                const presentationBottom = presentationSection.getBoundingClientRect().bottom;
+                const headerHeight = header.offsetHeight;
+            
+                if (presentationBottom <= headerHeight) {
+                    header.classList.add('scrolled');
+                    logoImage.src = './src/black-logo-wo-bg.png';
+                    updateFleche('#presentation', `
+                        <svg width="54" height="41" viewBox="0 0 54 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 29.08L27.1 3.99996" stroke="#8EBEDD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M50.3745 29.08L27.2745 3.99996" stroke="#8EBEDD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M13.24 37L27.0478 22.0086" stroke="#8EBEDD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M40.96 37L27.1522 22.0086" stroke="#8EBEDD" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    `);
+                } else {
+                    header.classList.remove('scrolled');
+                    logoImage.src = './src/logo-wo-bg.png';
+                    updateFleche('#competences', `
+                        <svg width="54" height="41" viewBox="0 0 54 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 11.92L27.1 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M50.3745 11.92L27.2745 37" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M13.24 4L27.0478 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M40.96 4L27.1522 18.9914" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    `);
+                }
+            }
+            
+            function updateFleche(targetId, svgContent) {
+                const currentLink = document.querySelector('.fleche a');
+                if (currentLink) {
+                    currentLink.classList.add('transition-out');
+                    setTimeout(() => {
+                        fleche.innerHTML = `<a href="${targetId}" class="transition-in">${svgContent}</a>`;
+                        attachFlecheEvent();
+                    }, 300);
+                } else {
+                    fleche.innerHTML = `<a href="${targetId}" class="transition-in">${svgContent}</a>`;
+                    attachFlecheEvent();
+                }
+            }
+            
+            function attachFlecheEvent() {
+                const flecheLink = document.querySelector('.fleche a');
+                if (flecheLink) {
+                    flecheLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = e.target.closest('a').getAttribute('href');
+                        if (targetId.startsWith('#')) {
+                            const targetElement = document.querySelector(targetId);
+                            targetElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    });
+                }
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('href');
+                    if (targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        setTimeout(checkScroll, 300);
+                    }
+                });
+            });
+            
+            attachFlecheEvent();            
+        </script>
     </body>
 </html>

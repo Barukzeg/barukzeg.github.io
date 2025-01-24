@@ -17,6 +17,7 @@ header {
   align-items: center;
   padding: 10px 20px;
   background-color: #E3FFF2;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   gap : 20px;
   height: 5dvh;
@@ -25,10 +26,12 @@ header {
 header .logo {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 header .logo img {
   height: 50px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 header nav ul {
@@ -46,6 +49,17 @@ header nav ul li a {
   color: #7C9DDD;
   font-weight: bold;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+header.scrolled {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled a {
+  color: #BC97DD;
 }
 
 /***********FOOTER***********/
@@ -75,20 +89,92 @@ section {
   background-color: #E3FFF2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.fleche, .counterweight {
-  height: 60px;
-  width: 60px;
   justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 .content-pres {
   background-color: #A6BAB1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   padding: 20px;
   width: 98dvw;
-  height: 45dvh;
+  height: 55dvh;
+}
+
+.img-pres {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.text-pres {
+  margin-left: 10%;
+  color: #E3FFF2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.text-pres h1 {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.text-pres p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  padding-left: 5%;
+  padding-right: 20%;
+}
+
+.text-pres hr {
+  border: 1px solid #E3FFF2;
+  width: 75%;
+  margin: 10px 0;
+}
+
+.content-pres img {
+  height: 90%;
+  width: auto;
+  border-radius: 5%;
+}
+
+/***********FLECHE***********/
+
+.fleche {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.fleche svg {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.fleche:hover svg {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.fleche a {
+  display: inline-block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fleche a.transition-out {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.fleche a.transition-in {
+  opacity: 1;
+  transform: scale(1);
 }
