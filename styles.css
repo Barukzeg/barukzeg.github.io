@@ -151,6 +151,34 @@ section {
   margin: 10px 0;
 }
 
+.text-btn-pres {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  padding: 25px;
+}
+
+.text-btn-pres button {
+  background-color: #E3FFF2;
+  color: #00000080;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+}
+
+.text-btn-pres button:hover {
+  background-color: #7C9DDD;
+  color: #E3FFF2;
+}
+
+.text-btn-pres a {
+  margin-right: 15%;
+}
+
 .content-pres img {
   height: 90%;
   width: auto;

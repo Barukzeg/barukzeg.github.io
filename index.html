@@ -29,10 +29,15 @@
         <main>
             <section id="presentation" class="presentation">
                 <div class="content-pres">
-                    <div class="text-pres">
-                        <h1>Naïl Lamarti</h1>
-                        <hr>
-                        <p>Âgé de 20 ans, je suis étudiant en informatique à l'IUT Paul Sabatier à Toulouse. Actuellement en troisième année du parcours "réalisation d'applications" de ma formation, j'ai pu mettre à épreuve mes compétences au cours de différents projets et stages, et prouver ma capacité à participer au développement d'applications de différents types. Que ce soit dans le Frontend, le Backend, ou la gestion et direction de projet, je sais mettre à profit mes connaissances pour mener à bien ma tâche.</p>
+                    <div class="text-btn-pres">
+                        <div class="text-pres">
+                            <h1>Naïl Lamarti</h1>
+                            <hr>
+                            <p>Âgé de 20 ans, je suis étudiant en informatique à l'IUT Paul Sabatier à Toulouse. Actuellement en troisième année du parcours "réalisation d'applications" de ma formation, j'ai pu mettre à épreuve mes compétences au cours de différents projets et stages, et prouver ma capacité à participer au développement d'applications de différents types. Que ce soit dans le Frontend, le Backend, ou la gestion et direction de projet, je sais mettre à profit mes connaissances pour mener à bien ma tâche.</p>
+                        </div>
+                        <a href="./src/cv_lamarti_nail.pdf" target="_blank">
+                            <button>CV</button>
+                        </a>
                     </div>
                     <div class="img-pres">
                         <img src="./src/photo.webp" alt="Naïl Lamarti">
@@ -81,12 +86,23 @@
             const footer = document.querySelector('footer');
             const presentationSection = document.querySelector('#presentation');
             const fleche = document.querySelector('.fleche');
-            
+        
             function checkScroll() {
                 const presentationBottom = presentationSection.getBoundingClientRect().bottom;
                 const headerHeight = header.offsetHeight;
-            
-                if (presentationBottom <= headerHeight) {
+                const scrollPosition = window.scrollY + window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+        
+                if (scrollPosition >= documentHeight) {
+                    updateFleche('#presentation', `
+                        <svg width="54" height="41" viewBox="0 0 54 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 29.08L27.1 3.99996" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M50.3745 29.08L27.2745 3.99996" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M13.24 37L27.0478 22.0086" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                            <path d="M40.96 37L27.1522 22.0086" stroke="#BC97DD" stroke-width="7" stroke-linecap="round"/>
+                        </svg>
+                    `);
+                } else if (presentationBottom <= headerHeight) {
                     header.classList.add('scrolled');
                     footer.classList.add('scrolled');
                     updateFleche('#presentation', `
@@ -110,7 +126,7 @@
                     `);
                 }
             }
-            
+        
             function updateFleche(targetId, svgContent) {
                 const currentLink = document.querySelector('.fleche a');
                 if (currentLink) {
@@ -124,7 +140,7 @@
                     attachFlecheEvent();
                 }
             }
-            
+        
             function attachFlecheEvent() {
                 const flecheLink = document.querySelector('.fleche a');
                 if (flecheLink) {
@@ -138,7 +154,7 @@
                     });
                 }
             }
-            
+        
             window.addEventListener('scroll', checkScroll);
             document.querySelectorAll('nav ul li a').forEach(link => {
                 link.addEventListener('click', (e) => {
@@ -151,8 +167,8 @@
                     }
                 });
             });
-            
-            attachFlecheEvent();            
+        
+            attachFlecheEvent();
         </script>
     </body>
 </html>
