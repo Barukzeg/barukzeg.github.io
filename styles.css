@@ -185,9 +185,9 @@ section {
   border-radius: 5%;
 }
 
-/***********COMPETENCES***********/
+/***********outils***********/
 
-.competences {
+.outils {
   background-color: #E3FFF2;
   display: flex;
   flex-wrap: wrap;
@@ -197,7 +197,7 @@ section {
   width: 100dvw;
 }
 
-.competences-content {
+.outils-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -207,24 +207,24 @@ section {
   padding: 2%;
 }
 
-.competences-title {
+.outils-title {
   height: 5%;
 }
 
-.competences-title h1 {
+.outils-title h1 {
   color: #E3FFF2;
   font-size: 2rem;
   margin: 10px 0;
 }
 
-.competences-title hr {
+.outils-title hr {
   border: 1px solid #E3FFF2;
   width: 55%;
   margin-left: 5%;
   margin: 10px 0;
 }
 
-.competences-zone {
+.outils-zone {
   display: flex;
   flex-wrap: wrap;
   height: 90%;
@@ -270,12 +270,11 @@ section {
   flex-direction: column;
   align-items: center;
   margin: 10px;
-  background: #00000080;
   border-radius: 20px;
   flex: 1 1 calc(33.333% - 20px);
   box-sizing: border-box;
   padding: 14px;
-  color: #E3FFF2;
+  color: #00000080;
   font-size: large;
   text-align: center;
 }
