@@ -80,12 +80,12 @@ footer {
   transition: opacity 0.3s ease, transform 0.3s ease;
   padding: 10px 20px;
 }
-/*
-footer.scrolled {
-  position: fixed;
-  bottom: 0;
+
+footer a {
+  margin-right: 64px;
+  cursor: pointer;
+  color: #E3FFF2;
 }
-*/
 
 /***********MAIN***********/
 
@@ -293,6 +293,158 @@ section {
   padding: 10px;
   margin: 5px;
 }
+
+/***********experience***********/
+.experiences {
+  background-color: #E3FFF2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 300dvh;
+  width: 100dvw;
+}
+
+.exp-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #00000080;
+  width: 98dvw;
+  height: 270dvh;
+  padding: 2%;
+}
+
+.exp-title {
+  height: 5%;
+}
+
+.exp-title h1 {
+  color: #E3FFF2;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.exp-title hr {
+  border: 1px solid #E3FFF2;
+  width: 55%;
+  margin-left: 5%;
+  margin: 10px 0;
+}
+
+.exp-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.exp-item {
+  height: 68dvh;
+  background-color: #E3FFF2;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+  margin-bottom: 2%;
+  padding: 20px;
+}
+
+.exp-item-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #7C9DDD;
+  color: #E3FFF2;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 10%;
+}
+
+.exp-item-button:hover {
+  background-color: #E3FFF2;
+  color: #7C9DDD;
+}
+
+.exp-item-title {
+  color: #00000080;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.exp-item-title div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exp-item-title h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.exp-item-title p {
+  font-size: 1.2rem;
+}
+
+.exp-item-title img {
+  height: 100px;
+  width: auto;
+  margin-left: 10px;
+}
+
+.exp-item-content img {
+  height: 420px;
+  width: auto;
+  border-radius: 12px;
+}
+
+.exp-item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+
+.exp-item-content-text {
+  color: #00000090;
+  font-size: 1.2rem;
+  padding: 64px;
+}
+
+.exp-item-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.exp-item-content-unfinished {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font-size: large;
+}
+
+.exp-item-content-unfinished p {
+  color: #00000090;
+  width: 50%;
+}
+
 
 /***********FLECHE***********/
 
