@@ -263,6 +263,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 
 .skill {
@@ -277,6 +278,20 @@ section {
   color: #00000080;
   font-size: large;
   text-align: center;
+}
+
+.tech {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #00000080;
+  text-align: center;
+  flex: 1 1 calc(12.5% - 30px);
+  font-size: medium;
+  padding: 10px;
+  margin: 5px;
 }
 
 /***********FLECHE***********/
