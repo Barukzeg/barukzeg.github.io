@@ -912,7 +912,10 @@
                         const targetElement = document.querySelector(targetId);
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                         setTimeout(checkScroll, 300);
-                    }
+                    } else {
+                        //dans la meme fenetre meme onglet on ouvre le lien
+                        window.location.href = targetId;
+                    }                    
                 });
             });
         
