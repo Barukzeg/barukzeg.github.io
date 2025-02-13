@@ -40,7 +40,7 @@
                         </span>
                         <div class="carousel">
                             <div class="carousel-items">
-                                <div class="carousel-item carousel-item--1 active" data-skills="web,app">
+                                <div class="carousel-item carousel-item--1 active" data-skills="ue1,ue2,ue3,ue4,ue5,ue6">
                                     <div class="carousel-item__image" style="background-image: url('../src/palendar.png');"></div>
                                     <div class="carousel-item__info">
                                         <div class="carousel-item__container">
@@ -50,7 +50,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item carousel-item--2" data-skills="design,db">
+                                <div class="carousel-item carousel-item--2" data-skills="ue1,ue3,ue4">
                                     <div class="carousel-item__image" style="background-image: url('../src/cabmed.png');"></div>
                                     <div class="carousel-item__info">
                                         <div class="carousel-item__container">
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item carousel-item--3" data-skills="security,testing">
+                                <div class="carousel-item carousel-item--3" data-skills="ue1,ue2,ue3,ue4">
                                     <div class="carousel-item__image" style="background-image: url('../src/messagerie.png');"></div>
                                     <div class="carousel-item__info">
                                         <div class="carousel-item__container">
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="carousel-item carousel-item--4" data-skills="scrum,optimization">
+                                <div class="carousel-item carousel-item--4" data-skills="ue1,ue3,ue5,ue6">
                                     <div class="carousel-item__image" style="background-image: url('../src/n2i.png');"></div>
                                     <div class="carousel-item__info">
                                         <div class="carousel-item__container">
@@ -91,6 +91,30 @@
                         </span>
                     </div>
                     <button id="view-skills">Voir les compétences associées</button>
+                </div>
+            </div>
+        </section>
+        <section id="skills" class="skills">
+            <div class="content-skills">
+                <div class="skills-bloc">
+                    <div class="skill-item" data-skill="ue1">
+                        <p>Développement d'applications sur différents supports</p>
+                    </div>
+                    <div class="skill-item" data-skill="ue2">
+                        <p>Analyse et optimisation d'applications</p>
+                    </div>
+                    <div class="skill-item" data-skill="ue3">
+                        <p>Déployement d'une application</p>
+                    </div>
+                    <div class="skill-item" data-skill="ue4">
+                        <p>Gestion et optimisation d'une base de données sécurisée</p>
+                    </div>
+                    <div class="skill-item" data-skill="ue5">
+                        <p>Suivi d'un projet en fonction des besoins du produit, du client, et de ses utilisateurs</p>
+                    </div>
+                    <div class="skill-item" data-skill="ue6">
+                        <p>Gestion d'une équipe de développeurs</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -120,7 +144,7 @@
                 const activeItem = document.querySelector('.carousel-item.active');
                 if (activeItem) {
                     const selectedSkills = activeItem.getAttribute('data-skills').split(',');
-                    const skills = document.querySelectorAll('.skill');
+                    const skills = document.querySelectorAll('.skill-item');
                     skills.forEach(skill => {
                         if (selectedSkills.includes(skill.getAttribute('data-skill'))) {
                             skill.classList.add('highlight');
@@ -128,7 +152,7 @@
                             skill.classList.remove('highlight');
                         }
                     });
-                    document.getElementById('outils').scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
